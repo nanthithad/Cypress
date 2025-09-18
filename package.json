@@ -1,0 +1,22 @@
+{
+  "name": "cypressadvanced",
+  "version": "1.0.0",
+  "description": "Advanced Cypress Project for OrangeHRM",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "test": "cypress run --browser chrome --headless",
+    "test:report": "npm run test && npx mkdirp cypress/reports/html && npx marge cypress/reports/index.json -f report -o cypress/reports/html --reportTitle \"OrangeHRM Test Report\" && (del /q \"cypress\\videos\\*.mp4\" 2>nul || true)"
+  },
+  "devDependencies": {
+    "cypress": "^15.2.0",
+    "cypress-mochawesome-reporter": "^3.8.4",
+    "mkdirp": "^3.0.1",
+    "mocha": "^10.4.0",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^4.4.1",
+    "mochawesome-report-generator": "^6.3.0",
+    "rimraf": "^6.0.1"
+  }
+}
