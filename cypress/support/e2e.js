@@ -16,3 +16,10 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 import 'cypress-mochawesome-reporter/register';
+
+describe('OrangeHRM Login', () => {
+ it('should login with custom command', () => {
+ cy.login('Admin', 'admin123')
+ cy.url().should('include', '/dashboard')
+ })
+})

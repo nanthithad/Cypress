@@ -1,0 +1,168 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-09-18T07:34:48.096Z",
+    "end": "2025-09-18T07:35:10.984Z",
+    "duration": 22888
+  },
+  "results": [
+    {
+      "uuid": "ad0f9e21-5b58-4979-b779-f05477d81586",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login-tests.cy.js",
+      "file": "cypress\\e2e\\login-tests.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "67d4e8aa-dd7c-4ebe-aa36-81fab7bba9b6",
+          "title": "OrangeHRM Login",
+          "fullFile": "cypress\\e2e\\login-tests.cy.js",
+          "file": "cypress\\e2e\\login-tests.cy.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should login with custom command",
+              "fullTitle": "OrangeHRM Login should login with custom command",
+              "timedOut": null,
+              "duration": 9844,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n    {\n        \"title\": \"Spec video recording\",\n        \"value\": \"videos\\\\cypress\\\\e2e/login-tests.cy.js.mp4\"\n    }\n]",
+              "code": "cy.login('Admin', 'admin123');\ncy.url().should('include', '/dashboard');",
+              "err": {},
+              "uuid": "50725e8b-75af-4ecd-ada0-370bba668277",
+              "parentUUID": "67d4e8aa-dd7c-4ebe-aa36-81fab7bba9b6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "50725e8b-75af-4ecd-ada0-370bba668277"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9844,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "49a07d12-8b4b-4992-ac78-834beb3619d6",
+          "title": "OrangeHRM Login Tests",
+          "fullFile": "cypress\\e2e\\login-tests.cy.js",
+          "file": "cypress\\e2e\\login-tests.cy.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "successful login with valid credentials",
+              "fullTitle": "OrangeHRM Login Tests successful login with valid credentials",
+              "timedOut": null,
+              "duration": 5526,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n    {\n        \"title\": \"Spec video recording\",\n        \"value\": \"videos\\\\cypress\\\\e2e/login-tests.cy.js.mp4\"\n    }\n]",
+              "code": "cy.visit('/web/index.php/auth/login');\ncy.get('input[name=\"username\"]').type('Admin');\ncy.get('input[name=\"password\"]').type('admin123');\ncy.get('button[type=\"submit\"]').click();\ncy.url({\n  timeout: 10000\n}).should('include', '/dashboard');\ncy.get('.oxd-topbar-header-title').should('contain', 'Dashboard');",
+              "err": {},
+              "uuid": "40b981d4-e1df-47b6-8e95-dfe0d0e7f6eb",
+              "parentUUID": "49a07d12-8b4b-4992-ac78-834beb3619d6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "failed login with invalid credentials",
+              "fullTitle": "OrangeHRM Login Tests failed login with invalid credentials",
+              "timedOut": null,
+              "duration": 7156,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n    {\n        \"title\": \"Spec video recording\",\n        \"value\": \"videos\\\\cypress\\\\e2e/login-tests.cy.js.mp4\"\n    }\n]",
+              "code": "cy.visit('/web/index.php/auth/login');\ncy.get('input[name=\"username\"]').type('InvalidUser');\ncy.get('input[name=\"password\"]').type('InvalidPass');\ncy.get('button[type=\"submit\"]').click();\ncy.get('.oxd-alert-content').should('be.visible');",
+              "err": {},
+              "uuid": "04ba6787-feea-4590-831a-55cab0911f0f",
+              "parentUUID": "49a07d12-8b4b-4992-ac78-834beb3619d6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "40b981d4-e1df-47b6-8e95-dfe0d0e7f6eb",
+            "04ba6787-feea-4590-831a-55cab0911f0f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 12682,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress\\reports\\.jsons",
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "saveJson": true,
+        "charts": true,
+        "reportPageTitle": "OrangeHRM Test Report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true
+      },
+      "version": "6.3.0"
+    }
+  }
+}
